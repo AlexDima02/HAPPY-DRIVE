@@ -1,0 +1,36 @@
+@import './_header.scss';
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    min-height: 100vh;
+    
+}
+
+.full-height-container {
+
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+
+
+/* Hero-slide */ 
+
+.hero_slide {
+    padding-top: 150px;
+    background-image: linear-gradient(black, blue);
+    min-height: 100vh;
+
+
+}
