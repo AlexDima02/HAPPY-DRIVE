@@ -1,6 +1,8 @@
 /* Colors */
 
-
+$primary-color: blue;
+$secondary-color: red;
+$tertiary-color: yellow;
 
 
 
@@ -21,3 +23,13 @@
 
 /* Layouts */
 
+@mixin column-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    @content;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
