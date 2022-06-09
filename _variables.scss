@@ -1,8 +1,8 @@
 /* Colors */
 
-$primary-color: blue;
-$secondary-color: red;
-$tertiary-color: yellow;
+$primary-color: #0E1E59;
+$secondary-color: #CB2A35;
+$tertiary-color: rgb(255, 255, 255);
 
 
 
@@ -11,14 +11,25 @@ $tertiary-color: yellow;
 
 /* Fonts-size */
 
+$fs-titles: 2rem;
+$fs-paragraph: 1.2rem;
+$fs-button: 0.9rem;
 
 
 
+/* Buttons settings - layout */
 
-/* Buttons settings */
+@mixin button {
+
+    @content;
+    font-size: $fs-button;
+    padding: 15px 50px;
+    color: $tertiary-color;
+    background-color: transparent;
+    border: 2px solid $secondary-color;
 
 
-
+}
 
 
 /* Layouts */
@@ -32,4 +43,14 @@ $tertiary-color: yellow;
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+}
+
+@mixin image-container {
+    
+    display: flex;
+    min-width: 50%;
+    height: auto;
+    justify-content: flex-start;
+    @content;
+
 }

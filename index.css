@@ -7,7 +7,6 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border: 1px solid red;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -34,11 +33,9 @@ nav .nav-container {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 50%;
-  border: 1px solid red;
 }
 
 nav .nav-container .nav_links-style {
-  border: 1px solid red;
   list-style: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -54,13 +51,16 @@ nav .nav-container .nav_links-style a {
 .logo {
   display: inline-block;
   height: auto;
-  border: 1px solid red;
 }
 
 .logo img {
   display: inline-block;
 }
 
+/* Colors */
+/* Fonts-size */
+/* Buttons settings - layout */
+/* Layouts */
 * {
   margin: 0;
   padding: 0;
@@ -89,28 +89,91 @@ body {
   padding-top: 150px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(blue));
   background-image: linear-gradient(black, blue);
-  min-height: 100vh;
+  min-height: 30vh;
 }
 
 .flex_container {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Image setup */
-.image_container {
-  min-width: 50%;
-  min-height: 50vh;
-  border: 1px solid red;
-}
-
-.image_container .image {
-  border: 1px solid red;
-  min-width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
+  /* Image setup */
+}
+
+.flex_container .image_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 50%;
+  height: auto;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.flex_container .image_container .image {
   background-image: url("./images/Hero-image.png");
+  height: 100vh;
+  min-width: 100%;
   background-repeat: no-repeat;
   background-position: bottom left;
+  background-size: 80%;
+}
+
+/* Hero-slide - text column */
+.text_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  font-size: 2rem;
+}
+
+.text_container h1 {
+  font-size: 200%;
+  font-weight: 500;
+  width: 80%;
+}
+
+.text_container p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 1.5rem 0;
+}
+
+.text_container .btn {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  padding: 15px 50px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid #CB2A35;
+  /* Animated background of the button to create a swipe effect */
+  cursor: pointer;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #CB2A35)) right;
+  background: linear-gradient(to left, transparent 50%, #CB2A35 50%) right;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  background-size: 200%;
+}
+
+.text_container .btn:hover {
+  background-position: left;
 }
 /*# sourceMappingURL=index.css.map */
