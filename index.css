@@ -103,7 +103,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   /* Image setup */
 }
 
@@ -118,7 +118,7 @@ body {
           justify-content: flex-start;
 }
 
-.flex_container .image_container .image {
+.flex_container .image_container .hero_image {
   background-image: url("./images/Hero-image.png");
   height: 100vh;
   min-width: 100%;
@@ -140,7 +140,6 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 0 auto;
-  position: relative;
   color: white;
   font-size: 2rem;
 }
@@ -175,5 +174,97 @@ body {
 
 .text_container .btn:hover {
   background-position: left;
+}
+
+/* Info-slide - text column */
+.text_container-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #CB2A35;
+  border: 4px solid #36ff0e;
+}
+
+.text_container-style .btn-style {
+  border: 3px solid white;
+}
+
+.text_container-style h1 {
+  font-size: 130%;
+  font-weight: 500;
+  width: 100%;
+}
+
+.text_container-style p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 1.5rem 0;
+}
+
+.text_container-style li {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.text_container-style .call_card {
+  padding: 20px;
+  border: 3px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.text_container-style .call_card img {
+  display: inline-block;
+}
+
+.text_container-style .emergency_card {
+  padding: 20px;
+  border: 3px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.text_container-style .emergency_card img {
+  display: inline-block;
+}
+
+.text_container-style .program_card {
+  padding: 20px;
+  width: 100%;
+  border: 3px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.text_container-style .program_card li {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.text_container-style .program_card img {
+  display: inline-block;
 }
 /*# sourceMappingURL=index.css.map */
