@@ -142,6 +142,27 @@ body {
 
 /* Info-slide - text column */ 
 
+.flex_container-style {
+
+
+    max-width: 1400px;
+    margin: 0 auto;
+    
+
+
+
+}
+
+
+.info_slide {
+
+
+    background-color: $primary-color;
+
+
+
+}
+
 .text_container-style {
 
 
@@ -149,7 +170,9 @@ body {
     align-items: flex-start;
     flex-direction: column;
     background-color: $secondary-color;
-    border: 4px solid rgb(54, 255, 14);
+    border: 4px solid rgb(255, 255, 255);
+    margin: 20px;
+    width: 100%;
     
 
     .btn-style {
@@ -167,6 +190,7 @@ body {
         font-size: 130%;
         font-weight: 500;
         width: 100%;
+        white-space: no-wrap;
     }
 
     p {
@@ -183,7 +207,8 @@ body {
 
         font-size: $fs-paragraph;
         font-weight: 400;
-
+        list-style: none;
+        padding: 10px 0;
 
     }
 
@@ -193,84 +218,81 @@ body {
 
 
 }
+
+
+/* Cards styling */
 
 .text_container-style {
 
 
-
-    .call_card {
-
-
-        padding: 20px;
-        border: 3px solid white;
-        display: flex;
-        flex-direction: column;
-        
-
-        img {
-
-
-           display: inline-block;
-
-        }
-
-
-    }
-
-
-    .emergency_card {
-
-
-        padding: 20px;
-        border: 3px solid white;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        img {
-
-
-           display: inline-block;
-
-        }
-
-
-    }
-
-
-
-    .program_card {
-
-        padding: 20px;
-        width: 100%;
-        border: 3px solid white;
-        display: flex;
-        flex-direction: column;
-
-        li {
-
-
-            list-style: none;
-            padding: 10px 0;
-
-
-        }
-
     
+
+
+
+    .box_card {
+
+
+       
+        width: 100%;
+        border: 3px solid white;
+        display: flex;
+        flex-direction: column;
+
+
+        .text-box {
+
+
+            padding: 20px;
+
+
+        }
         
 
-        img {
+        .image_container {
 
 
-           display: inline-block;
+           @include image-container;
+            
+
+
+           .card-image {
+
+            max-width: 100px;
+            width: 100%;
+            
+
+
+           }
 
         }
 
 
     }
-
+    
+    
 
 
 }
 
 
+/* Image setup */
+.image_container-position {
+
+    border: 1px solid red;
+    margin-left: 10rem;
+
+.info_image {
+
+
+            background-image: url('./images/Red-car.png');
+            height: 100vh; 
+            min-width: 100%;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: 80%;
+            border: 1px solid red;
+
+}
+
+
+}
