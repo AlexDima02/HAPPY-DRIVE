@@ -1,5 +1,6 @@
 @import './_header.scss';
 @import './variables';
+@import './footer';
 
 * {
 
@@ -13,7 +14,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     min-height: 100vh;
-
+    overflow-x: hidden;
     
 }
 
@@ -140,14 +141,17 @@ body {
 
 }
 
+
+
+
 /* Info-slide - text column */ 
 
 .flex_container-style {
 
 
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
-    
+    border: 1px solid rgb(72, 255, 17);
 
 
 
@@ -167,20 +171,22 @@ body {
 
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     background-color: $secondary-color;
     border: 4px solid rgb(255, 255, 255);
-    margin: 20px;
+    margin: 50px;
     width: 100%;
+    border: 1px solid rgb(72, 255, 17);
+    
     
 
     .btn-style {
 
 
         border: 3px solid white;
-
-
+        margin: 0;
+        font-weight: bold;
 
     }
 
@@ -220,13 +226,19 @@ body {
 }
 
 
+
 /* Cards styling */
 
-.text_container-style {
+.flex_container-position {
 
-
+    display: flex;
+    flex-direction: row;
     
 
+
+}
+
+.text_container-style {
 
 
     .box_card {
@@ -243,23 +255,34 @@ body {
 
 
             padding: 20px;
-
-
+            border: 1px solid rgb(117, 11, 255);
+            display: inline-block;
+            box-sizing: border-box;  
+            height: auto;
+            width: 100%;
+            
         }
         
 
         .image_container {
 
 
-           @include image-container;
+           @include image-container {
+            display: inline-block;
+            border: 1px solid rgb(0, 255, 221);
+            min-width: 30%;
             
+           
+        
+            }
+           
 
 
            .card-image {
 
-            max-width: 100px;
+            max-width: 300px;
             width: 100%;
-            
+            border: 1px solid rgb(0, 255, 221);
 
 
            }
@@ -279,9 +302,9 @@ body {
 .image_container-position {
 
     border: 1px solid red;
-    margin-left: 10rem;
-
-.info_image {
+    margin-left: 1rem;
+    
+    .info_image {
 
 
             background-image: url('./images/Red-car.png');
@@ -292,7 +315,1532 @@ body {
             background-size: 80%;
             border: 1px solid red;
 
-}
+
+        }
 
 
 }
+
+
+
+
+/* Third section - Poduct showcase */
+
+
+.showcase_section {
+   
+    background-color: $primary-color;
+    @include typo {
+        
+        
+        color: white;
+        
+        h1 {
+           
+            font-size: 130%;
+            font-weight: 500;
+            width: 100%;
+            white-space: no-wrap;
+        }
+    
+        p {
+    
+            font-size: $fs-paragraph;
+            font-weight: 400;
+            margin: 1.5rem 0;
+    
+        }
+    
+    
+        li {
+    
+    
+            font-size: $fs-paragraph;
+            font-weight: 400;
+            list-style: none;
+            padding: 10px 0;
+    
+        }
+
+
+    }
+
+    .showcase_container {
+
+
+        @include flex-container-row {
+
+            flex-direction: column;
+            padding-top: 100px;
+
+        }
+
+        .btn-selection {
+
+           
+            @include button;
+            cursor: pointer;
+            background: linear-gradient(to left, transparent 50%, $secondary-color 50%)right;
+            transition: .5s ease-in;
+            background-size: 200%;
+            margin-bottom: 100px;
+            
+
+            &:hover {
+
+                background-position: left;
+                
+
+            }
+
+        }
+        
+
+    }
+
+
+    .header-title {
+
+        margin-top: 20px;
+        align-items: center;
+        font-weight: bold;
+        box-sizing: border-box;
+        position: relative;
+       
+        svg {
+
+            position: absolute;
+            width: 20%;
+            height: auto;
+            top: -50px;
+            left: -40px;
+            z-index: 1;
+        }
+        
+        h1 {
+            
+            font-size: $fs-titles;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            white-space: nowrap;
+            
+        }
+
+
+
+
+
+    }
+
+
+    .category-container {
+
+        position: relative;
+        max-width: 1100px;
+        width: 100%;
+        height: 0;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid red;
+        min-height: 80vh;
+        gap: 20px;
+       
+
+
+        .car-container {
+
+            
+            width: 300px;
+            height: auto;
+            border: 1px solid rgb(255, 0, 0);
+
+        }
+
+        
+
+        #c-1, #c-2, #c-3 {
+
+            display: none;
+
+        }
+
+       
+
+    }
+
+
+
+}
+
+/* Card setup */
+
+.car-container {
+    
+    
+    .prev {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        border: 1px solid rgba(255, 255, 255, 0.281);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 8.5px );
+        border-radius: 20%;
+        left: 0;
+        bottom: 50%;
+        z-index: 99;
+        cursor: pointer;
+        transition: border .3s ease-in;
+
+
+        &:hover {
+
+
+            border: 1px solid rgb(255, 255, 255);
+
+
+
+        }
+
+
+        span {
+
+            font-size: 2.2rem;
+
+
+
+        }
+
+
+       
+    }
+
+    .next {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        border: 1px solid rgba(255, 255, 255, 0.281);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 8.5px );
+        border-radius: 20%;
+        right: 0;
+        bottom: 50%;
+        z-index: 99;
+        cursor: pointer;
+        transition: border .3s ease-in;
+
+
+        &:hover {
+
+
+            border: 1px solid rgb(255, 255, 255);
+
+
+
+        }
+
+       
+        span {
+
+            font-size: 2.2rem;
+
+
+
+        }
+
+    }
+
+
+    .car-image {
+
+        
+        object-fit: contain;
+        width: 300px;
+        height: 350px;
+        border-radius: 10px;
+        padding-bottom: 5px;
+       
+        img {
+
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: 5px solid white;
+            filter: brightness(60%);
+        }
+        
+
+
+    }
+
+
+    .btn-category {
+
+        color: white;
+        font-size: 1.3rem;
+        background-color: transparent;
+        border: 3px solid white;
+        border-radius: 10px;
+        line-height: 2.8rem;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        
+    
+    }
+
+
+}
+
+
+
+.car-container { 
+    
+    transition: margin .3s ease-in;
+            
+    .car-image {
+
+
+        filter: opacity(35%);
+        transition: filter .3s ease-in;
+        
+
+
+
+
+    }
+
+    .btn-category {
+
+
+        filter: opacity(5%);
+        transition: filter .3s ease-in;
+
+    }
+    
+}
+
+/* Adding slider functionality */
+
+
+/* Because of the absolute positioniing of the arrows they stacked on top of each other, 
+i created a sytem that says when a button is pressed every unnecesary arrow will disappear 
+in order to make the slider go next or back according to the instruction of the label for the specific button */
+
+#c-1:checked ~ #two #two-arrow, #three #three-arrow {
+
+
+    display: none;
+
+
+
+
+
+}
+
+#c-2:checked ~ #one #one-arrow, #three #three-arrow {
+
+
+    display: none;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+#c-1:checked ~ #one .car-image {
+
+    filter: opacity(100%);
+
+
+
+
+
+
+}
+
+#c-1:checked ~ #one .btn-category {
+
+
+    filter: opacity(100%);
+
+
+}
+
+#c-1:checked ~ #one {
+   
+
+    margin-top: 150px;
+
+
+}
+
+
+
+
+#c-2:checked ~ #two .car-image {
+
+
+    filter: opacity(100%);
+
+
+
+}
+
+#c-2:checked ~ #two .btn-category {
+
+
+    filter: opacity(100%);
+
+
+}
+
+#c-2:checked ~ #two {
+
+
+    margin-top: 150px;
+
+
+
+}
+
+#c-3:checked ~ #three .car-image {
+
+    filter: opacity(100%);
+
+
+
+
+
+
+}
+
+#c-3:checked ~ #three .btn-category {
+
+
+    filter: opacity(100%);
+
+
+}
+
+#c-3:checked ~ #three {
+
+
+    margin-top: 150px;
+
+
+}
+
+
+/* Testimonial Section */
+
+.testimonials_section {
+
+    background-color: $primary-color;
+    border: 1px solid red;
+
+    @extend .showcase_section;
+    
+}
+
+
+.testimonials_container {
+
+    @include flex-container-row {
+
+        flex-direction: column;
+        
+
+
+    }
+
+    
+    
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid rgb(43, 255, 0);
+    padding: 20px;
+    padding-top: 100px;
+    position: relative;
+
+
+
+    
+    #btn-1, #btn-2, #btn-3, #btn-4 {
+
+    display: none;
+        
+
+    } 
+
+
+
+    .prev {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        border: 1px solid rgba(255, 255, 255, 0.281);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 8.5px );
+        border-radius: 20%;
+        left: -100px;
+        bottom: 50%;
+        z-index: 99;
+        cursor: pointer;
+        transition: border .3s ease-in;
+
+
+        &:hover {
+
+
+            border: 1px solid rgb(255, 255, 255);
+
+
+
+        }
+
+
+        span {
+
+            font-size: 2.2rem;
+
+
+
+        }
+
+
+       
+    }
+
+    .next {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        border: 1px solid rgba(255, 255, 255, 0.281);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 8.5px );
+        border-radius: 20%;
+        right: -100px;
+        bottom: 50%;
+        z-index: 99;
+        cursor: pointer;
+        transition: border .3s ease-in;
+
+
+        &:hover {
+
+
+            border: 1px solid rgb(255, 255, 255);
+
+
+
+        }
+
+       
+        span {
+
+            font-size: 2.2rem;
+
+
+
+        }
+
+    }
+
+
+    .dots_navbar {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; 
+        position: absolute;  
+        bottom: -40%;
+        width: 100%;
+        height: 30px;
+        margin-top: 50px;
+        z-index: 99;
+        
+
+        .dots-style {
+
+            margin-left: 1rem;
+            width: 30px;
+            height: 30px;
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color .3s ease-in;
+
+        }
+
+
+    }
+    
+
+
+
+
+
+
+    .testimonials_container-slider {
+
+
+        background-color: transparent;
+        height: 0;
+        padding-bottom: 250px;
+        max-width: 800px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+
+    }
+
+    
+    
+    
+
+
+    .testimonial_card {
+        
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 10px;
+        width: 600px;
+        height: 100%;
+       
+    }
+
+    .testimonial_card-style {
+
+        backdrop-filter: blur(20px);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 8.5px );
+        border-radius: 0px;
+        z-index: -1;
+
+
+        
+
+        .profile_container {
+
+
+            
+            width: 100px;
+            height: auto;
+            border-radius: 70%;
+            text-align: center;
+            
+            .profile_image {
+
+                width: 100%;
+                height: 100%;
+                border-radius: 70%;
+
+            }
+            
+        }
+
+
+        .description {
+            
+            padding-left: 35px;
+            width: 100%;
+
+
+        }
+
+        .description-style {
+
+
+            svg {
+
+                
+                width: 8%;
+                height: auto;
+
+            }
+
+
+
+
+        }
+
+    }
+
+    
+
+
+    .testimonial_title {
+
+        font-size: $fs-titles;
+        border: 1px solid red;
+        margin-bottom: 5rem;
+        text-align: center;
+        z-index: 1;
+
+       .h1-effect {
+        
+        font-size: 110%;
+        font-weight: bold;
+        letter-spacing: 0.5rem;
+        position: relative;
+        top: -30px;
+        background: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.384));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+       }
+
+
+    }
+
+    .circle {
+
+
+        position: absolute;
+        right: 250px;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(255, 0, 0, 0.384), rgba(255, 0, 0, 0), rgba(255, 0, 0, 0));
+        
+    }
+
+    .circle::after {
+
+        content: "";
+        position: absolute;
+        top: -250px;
+        right: 150px;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(255, 0, 0, 0.233), rgba(255, 0, 0, 0), rgba(255, 0, 0, 0));
+        
+
+
+    }
+
+}
+
+
+
+/* About US Section */
+
+
+.about_us_section {
+
+
+
+    background-color: $primary-color;
+
+    @extend .showcase_section;
+   
+
+}
+
+.about_us_container {
+
+
+   
+    @extend .testimonials_container;
+    max-width: 100%;
+    padding: 0px;
+
+    .header-title-style {
+       
+        
+        margin-bottom: 50px;
+        
+        svg {
+
+            position: absolute;
+            width: 50%;
+            height: auto;
+            top: -20px;
+            left: -40px;
+            z-index: 1;
+        }
+        
+        h1 {
+            
+            font-size: $fs-titles;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            white-space: nowrap;
+            
+        }
+
+
+}
+
+.cards_wrapper-position {
+
+   
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    padding: 0 20px;
+    z-index: 9;
+
+
+}
+
+.cards_wrapper {
+
+
+   
+   
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;      
+    gap: 20px;
+    justify-content: center;
+    width: 550px;
+
+}
+
+}
+
+/* Placing an object as a background */
+
+.cards_wrapper-background {
+
+    background-image: url('./images/About\ US-object.png');
+    width: 50%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    left: 100px;
+    z-index: 1;
+}
+
+
+/* Customizing the cards */
+
+.info_cards {
+
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 250px;
+    
+}
+
+.info_cards-style {
+
+    
+    @extend .testimonial_card-style;
+    border-radius: 10px;
+
+    .info_cards_title {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+       
+        .info_cards_image {
+
+            width: 180px;
+            height: auto;
+            position: relative;
+            padding-right: 1rem;
+
+
+            img {
+
+
+                width: 100%;
+                height: 100%;
+
+            }
+
+
+        }
+        
+    }
+
+}
+
+/* Car display */
+
+.about_us_car {
+
+    
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 110px;
+    z-index: 9;
+
+    img {
+
+        width: 600px;
+        height: auto;
+        
+    }
+
+}
+
+
+/* Our partners Section */
+
+
+.partners_section {
+
+    @extend .about_us_section;
+
+    h1 {
+        font-size: 200%;
+        text-align: center;
+        padding: 40px;
+
+    }
+
+
+}
+.partners_container {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+
+.partners_container-style {
+
+    background-color: rgba(0, 0, 0, 0.322);
+    line-height: 6rem;
+
+    li {
+        
+        height: 100px;
+        width: 100px;
+        box-sizing: border-box;
+
+        img {
+
+            
+            width: 100%;
+            height: 100%; 
+            object-fit: contain;
+
+
+
+        }
+
+
+
+    }
+
+}
+
+/* Newletter Section */
+
+.newsletter_section {
+
+
+    @extend .about_us_section;
+
+
+
+}
+
+.newsletter_section_container {
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+}
+
+.newsletter_section_container-style {
+
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+
+
+
+}
+
+.newsletter_image_container {
+
+
+    min-width: 50%;
+    height: auto;
+    
+
+    .newsletter_image {
+
+        background-image: url('./images/newsletter-photo.png');
+        min-width: 100%;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: 300px 300px;
+        background-position: center center;
+
+    }
+
+
+}
+
+
+.newsletter_text {
+
+    h1 {
+
+        padding-bottom: 30px;
+        font-size: 150%;
+        width: 60%;
+    }
+
+    .call_to_action-style {
+
+
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.411), rgba(255, 255, 255, 0.103));
+        line-height: 2.7rem;
+        width: 100%;
+        padding: 0 20px;
+        border: 1px solid white;
+        color: white;
+        
+
+        &::placeholder {
+
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.788);
+            font-size: $fs-paragraph;
+
+        }
+
+
+    }
+
+
+
+
+}
+
+
+.button {
+
+
+    position: relative;
+    
+
+    .btn-newsletter {
+        cursor: pointer;
+        position: absolute;
+        top: 0.1rem;
+        right: 15px;
+        padding: 2px 13px;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.418);
+        background-color: transparent;
+
+
+        &:hover {
+
+
+            border: 4px solid rgb(255, 255, 255);
+
+
+        }
+
+        span {
+
+            font-weight: bold;
+            color: white;
+            font-size: 200%;
+
+
+        }
+
+
+    }
+
+}
+
+
+
+/* Responsivness Hero-section */
+
+@media (max-width: 700px) {
+
+    .flex_container {
+
+
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+    }
+
+
+    .image_container-position {
+
+
+        display: none;
+        
+        
+        .info_image {
+
+
+            display: none;
+
+
+
+        }
+
+
+    }
+
+    html {
+
+        font-size: 80%;
+
+
+    }
+
+
+
+
+
+
+
+
+}
+
+
+/* Responsivness Info-section */
+
+@media (max-width: 700px) {
+
+    .flex_container {
+
+
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+    }
+
+
+    .image_container {
+
+
+        display: none;
+        
+        .hero_image {
+
+
+            display: none;
+
+
+
+        }
+
+
+    }
+
+    .text_container {
+
+    
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: white;
+        font-size: $fs-titles;
+       
+        
+            
+            
+            
+        h1 {
+               
+            font-size: 170%;
+            font-weight: 500;
+            width: 100%;
+        }
+    
+        p {
+    
+            font-size: $fs-paragraph;
+            font-weight: 400;
+            margin: 1.5rem 0;
+    
+        }
+
+
+    }
+
+
+
+}
+
+/* Responsivness About-us-section */
+
+@media only screen and (max-width: 700px) {
+
+    .cards_wrapper-position {
+
+        margin: 0;
+        display: flex; 
+        flex-direction: column;
+        border: 1px solid red;
+        align-items: center;
+        
+    }
+
+    
+    
+    .cards_wrapper {
+
+       max-width: 300px;
+       width: 100%;
+      
+    
+       .info_cards {
+
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+       }
+        
+        
+    }
+    
+
+/* Text auto resize */
+
+    .info_cards-style {
+
+        @include typo-mobile;
+
+    }
+
+    .cards_wrapper-background {
+
+
+        display: none;
+
+
+    }
+
+    .about_us_car {
+
+
+        display: none;
+
+
+    }
+
+    
+
+
+}
+
+/* Responsivness Car category selection */
+
+
+@media (max-width: 700px) {
+
+   .header-title {
+
+
+
+    svg {
+
+        display: none;
+
+
+    }
+
+    h1 {
+            
+        font-size: $fs-titles-mobile;
+        z-index: 2;
+        width: 100%;
+        border: 1px solid red;
+        white-space: nowrap;
+        
+    }
+
+
+
+   }
+   
+   
+   
+    #c-1:checked ~ #one {
+
+        margin-left: 130%;
+
+
+
+
+    }
+
+    #c-3:checked ~ #three {
+
+        margin-right: 130%;
+
+
+
+
+    }
+
+}
+
+
+
+/* Responsivness Testimonial-section */
+
+@media (max-width: 700px) {
+
+
+    .testimonials_container-slider {
+
+
+        background-color: transparent;
+        height: 0;
+        padding-bottom: 250px;
+        border: 1px solid rgb(0, 255, 98);
+        max-width: 600px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+       
+
+
+        .testimonial_card {
+        
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            
+            
+        }
+
+       
+    
+
+
+
+    }
+
+
+
+
+    .prev {
+
+
+        display: none;
+
+    }
+
+    
+    .next {
+
+        display: none;
+       
+    }
+
+
+
+}
+
+
+
+
+#btn-1:checked ~ #one,
+#btn-2:checked ~ #two,
+#btn-3:checked ~ #three,
+#btn-4:checked ~ #four {
+
+    z-index: 9;
+    
+
+
+}
+
+#btn-1:checked ~ .dots_navbar #dot-1,
+#btn-2:checked ~ .dots_navbar #dot-2,
+#btn-3:checked ~ .dots_navbar #dot-3,
+#btn-4:checked ~ .dots_navbar #dot-4 {
+
+    background-color: rgba(255, 0, 0, 0.37);
+
+
+
+}
+
+
+
+
+
+
+/* Responsivness Our-partners-section */
+
+
+@media (max-width: 700px) {
+
+    .partners_container {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+
+    }
+
+    .partners_container-style {
+
+        li {
+
+            width: 100px;
+            height: 100px;
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+}
+
+/* Responsivness Newsletter-section */
+
+@media (max-width: 700px) {
+
+.newsletter_section_container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+
+
+
+}
+
+
+.button {
+
+
+    position: relative;
+    
+
+    .btn-newsletter {
+        cursor: pointer;
+        position: absolute;
+        top: 0.1rem;
+        right: 15px;
+        padding: 1px 7px;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.418);
+        background-color: transparent;
+
+        span {
+
+            font-weight: bold;
+            color: white;
+            font-size: 160%;
+
+
+        }
+
+
+
+    }
+
+}
+
+.newsletter_image_container {
+
+
+    display: none;
+
+
+}
+
+}
+
